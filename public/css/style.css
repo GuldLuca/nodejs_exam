@@ -1,0 +1,67 @@
+body{
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+}
+
+h1{
+    width: 960px;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+
+#section-username{
+    width: 960px;;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+#section-send-message{
+    width: 960px;
+    margin: auto;
+    text-align: center;
+    bottom: 50px;
+}
+
+#message-list{
+    list-style-type: none;
+    margin: auto;
+}
+
+#users-connected-list{
+    list-style-type: none;
+    float: left;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    overflow: auto;
+    width: 200px;
+    height: 600px;
+    margin: auto;
+    margin-left: 50px;
+    text-align: center;
+}
+
+#section-messages{
+    overflow: auto;
+    max-height: 600px;
+    margin: auto;
+    max-width: 960px;
+    min-height: 600px;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    
+}
+
+#section-typing{
+    float: left;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    width: 100px;
+    height: 50px;
+}

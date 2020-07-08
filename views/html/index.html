@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+    <title>NodeJS Chatroom</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    
+    <h1>Chat Room</h1>
+   
+    <div id="section-username">
+        <input id="username-input" type="text">
+        <button id="username-button">Enter</button>
+    </div>
+
+    <div id="section-typing">
+        
+    </div>
+
+    <div id="section-send-message">
+        <input id="send-message-input" type="text">
+        <button id="send-message-btn">Send</button>
+    </div>
+
+    <div id="section-users-connected">
+        <ul id="users-connected-list">
+        </ul>
+    </div>
+
+    <div id="section-messages">
+        <ul id="message-list">
+        </ul>
+    </div>
+
+    <div id="section-previous-messages">
+        <button id="previous-message-btn">Show Previous Messages</button>
+        <table id="previous-message-table">
+        </table>
+    </div>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/users.js"></script>
+  </body>
+</html>
