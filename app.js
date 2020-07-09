@@ -5,10 +5,6 @@ const http = require("http").Server(app);
 const port = process.env.PORT || 4000;
 const bodyParser = require("body-parser");
 const path = require("path");
-const phpExpress = require("php-express")({
-    binPath: "php"
-});
-const router = express.Router;
 
 const io = require("socket.io")(http);
 
@@ -21,44 +17,44 @@ app.get("/", (req, res) => {
 io.on("connection", (socket) => {
 
     //User connected
-    socket.on("user_connected", data => {
-        socket.emit("user_connected", data);
+    socket.on("user_connected", (data) => {
+
+        socket.emit("user_connected", {
+            username: data.username,
+            password: data.password
+        });
 
         User.create({
-            username: socket.username
+            username: data.username,
+            password: data.password
         });
 
-    });
-
-    //Typing
-    socket.on("typing", (data) => {
-        socket.broadcast.emit("typing", {
-            username: data.username
-        });
     });
 
     //New message
     socket.on("new_message", (data) => {
-        socket.emit("new_message", {message: data.message, username: socket.username});
+
+        socket.broadcast.emit("new_message", {
+            message: data.message,
+            username: socket.username
+        });
+
+        socket.emit("new_message", {
+            message: data.message,
+            username: socket.username
+        });
 
         Message.create({
             from: socket.username,
             message: data.message
         })
     });
-
-    socket.on("disconnection", data => {
-        socket.emit("disconnection", {username: socket.username})
-        console.log("Disconnection from : ", data);
-    });
-
 });
 
 app.use(express.static(__dirname + "/public/"));
 app.use(bodyParser.json());
 
 app.set("views", path.join(__dirname, "/views/html"));
-app.engine("php", phpExpress.engine);
 
 //Routes
 const userRoute = require("./routes/users");

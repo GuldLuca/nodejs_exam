@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const DB = require("./database");
 
-//Creating new table in database reference "sequelize" - user table with following attributes
+//Creating new table in DB
 const User = DB.define("user", {
   id: {
     type: Sequelize.INTEGER,

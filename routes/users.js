@@ -1,15 +1,26 @@
 const router = require("express").Router();
 const User = require("../models/user");
 
-//Get specific user from register
-router.get('/data/getuser/:username', async (req, res) => {
-    const username = req.params.username;
-    const user = await User.findAll({where: {"username": username}});
-    //query().select('users.id').where({ 'username': username });
-    if (user.length > 0) {
+//Get all users from db
+router.get("/api/users", async (req, res) => {
+
+    const users = await User.findAll();
+
+    return res.send({response: users});
+});
+
+
+//Get specific user from db
+router.get("/api/users/:id", async (req, res) => {
+
+    const id = req.params.id;
+    const user = await User.findAll({where: {"id": id}});
+    
+    if(user.length > 0){
         return res.send({ response: user });
-    } else {
-        return res.status(400).send({ response: "Username dosen't exists" });
+    } 
+    else{
+        return res.status(400).send({ response: "User dosen't exists" });
     }
 });
 
