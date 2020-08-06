@@ -6,19 +6,21 @@
       <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
-    
-    <h1>Chat Room</h1>
-   
-    <div id="section-username">
-        <input id="username-input" type="text" placeholder="Username">
-        <input id="password-input" type="text" placeholder="Password">
-        <button id="username-button">Submit</button>
+    <div id="section-signout">
+        <form action="/signout" method="POST">
+            <button id="signout-btn">SignOut</button>
+        </form>
     </div>
+    <div id="section-profile">
+        <button id="show-profile-btn">Show Profile</button>
+    </div>
+    <h1>Chat Room</h1>
 
     <div id="section-users-connected">
         <p>Users Connected Now</p>
         <ul id="users-connected-list"></ul>
     </div>
+    
     <div id="section-previous-users">
         <p>All Users From Database</p>
         <ul id="previous-users-list"></ul>
@@ -40,5 +42,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/users.js"></script>
+    <script src="js/profile.js"></script>
   </body>
 </html>

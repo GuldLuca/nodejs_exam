@@ -1,5 +1,6 @@
 $(document).ready(() => {
     window.getUsers = () => {
+
         $.ajax({
             url: "/api/users",
             type: "GET",
@@ -40,15 +41,11 @@ $(document).ready(() => {
                         $("#section-user-details").append(`
                             <table>
                                 <tr>
-                                    <th>id</th>
                                     <th>Username</th>
-                                    <th>Password</th>
                                     <th>Member since</th>
                                 </tr>
                                 <tr>
-                                    <th>${detail.id}</th>
                                     <th>${detail.username}</th>
-                                    <th>${detail.password}</th>
                                     <th>${detail.createdAt}</th>
                                 </tr>
                             </table>
@@ -59,6 +56,5 @@ $(document).ready(() => {
             });
         })
     }
-
     window.getUsers();
 })

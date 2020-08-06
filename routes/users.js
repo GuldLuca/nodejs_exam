@@ -20,7 +20,7 @@ router.get("/api/users/:id", async (req, res) => {
         return res.send({ response: user });
     } 
     else{
-        return res.status(400).send({ response: "User dosen't exists" });
+        return res.status(400).send({ response: "Couldn't find any user with that id" });
     }
 });
 

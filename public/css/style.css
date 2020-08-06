@@ -9,8 +9,24 @@ h1{
     width: 960px;
     margin: auto;
     text-align: center;
-    padding-bottom: 70px;
-    padding-top: 70px;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+
+h2{
+    text-align: center;
+    padding: 50px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#section-signup{
+    text-align: center;
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#signup-btn{
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #section-username{
@@ -30,6 +46,26 @@ h1{
 
 #username-button{
     font-family: 'Courier New', Courier, monospace;
+}
+
+#section-profile{
+    font-family: 'Courier New', Courier, monospace;
+
+}
+#show-profile-btn{
+    float: right;
+    margin-top: 15px;
+    margin-right: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 15px;
+}
+
+#signout-btn{
+    float: left;
+    margin-top: 15px;
+    margin-left: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 15px;
 }
 
 #message-list{
@@ -111,12 +147,19 @@ h1{
 
 #section-send-message{
     float: right;
-    margin-right: 50px;
-    max-width: 800px;
-    min-width: 800px;
+    margin-right: 190px;
+    max-width: 700px;
+    min-width: 700px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #send-message-input{
     width: 100%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#send-message-btn{
+    width: 10%;
+    font-family: 'Courier New', Courier, monospace;
 }
 

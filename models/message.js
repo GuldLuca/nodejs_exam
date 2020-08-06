@@ -2,7 +2,7 @@
 const Sequelize = require("sequelize");
 const DB = require("./database");
 
-//Creating new table in DB
+//Defining message table
 const Message = DB.define("message", {
   id: {
     type: Sequelize.INTEGER,

@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const DB = require("./database");
 
-//Creating new table in DB
+//Defining User table in database
 const User = DB.define("user", {
   id: {
     type: Sequelize.INTEGER,
@@ -9,7 +9,10 @@ const User = DB.define("user", {
     allowNull: false,
     primaryKey: true
   },
-  username: Sequelize.STRING,
+  username: {
+    type: Sequelize.STRING,
+    unique: true
+  },
   password: {
     type: Sequelize.STRING,
     allowNull: false

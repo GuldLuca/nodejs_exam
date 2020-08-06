@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Log into Chatroom</h2>
+    <div id="section-username">
+        <form action="/login" method="POST">
+            <input id="username-input" type="text" placeholder="Username" name="username">
+            <input id="password-input" type="text" placeholder="Password" name="password">
+            <button id="username-button">Submit</button>
+        </form>
+    </div>
+
+    <h2>Sign up to Chatroom</h2>
+    <div id="section-signup">
+        <form action="/signup" method="POST">
+            <input id="username-input" type="text" placeholder="Username" name="username">
+            <input id="password-input" type="text" placeholder="Password" name="password">
+            <button id="signup-btn">Submit</button>
+        </form>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>
