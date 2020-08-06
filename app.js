@@ -8,6 +8,8 @@ const io = require("socket.io")(http);
 
 const port = process.env.PORT || 4000; //Change to just port?
 
+global.appRoot = __dirname;
+
 
 //Setup bodyparser
 app.use(bodyParser.json());

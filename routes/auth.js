@@ -41,11 +41,11 @@ router.post("/login", (req, res) =>{
 });
 
 router.get("/login", (req, res) => {
-    res.sendFile("/home/luca/nodejs_reeksamen/views/html/register.html");
+    res.sendFile(global.appRoot + "/views/html/register.html");
 })
 
 router.get("/signup", (req, res) => {
-    res.sendFile("/home/luca/nodejs_reeksamen/views/html/register.html");
+    res.sendFile(global.appRoot + "/views/html/register.html");
 })
 
 // post request on /signup
