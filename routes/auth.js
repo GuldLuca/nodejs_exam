@@ -25,7 +25,7 @@ router.post("/login", (req, res) =>{
                         return res.redirect(url.format({ pathname: "/secretentrance", query: { username: user.username }}));
                 
                     }
-                    return res.status(500).send({ response: "An error occured in the database" });
+                    return res.status(500).send({ response: "Wrong password" });
                 })
             .catch(error => console.log(error));
             })

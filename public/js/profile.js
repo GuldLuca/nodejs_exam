@@ -1,9 +1,7 @@
-function updateProfile(event) {
+function updateProfile() {
 
-    //event.preventDefault();
-
-    let fName = $("#firstname").val();
-    let lName = $("#lastname").val();
+    let firstname = $("#firstname").val();
+    let lastname = $("#lastname").val();
     let phone = $("#phone").val();
     let address = $("#address").val();
     let profileId = $("#profileId").val();
@@ -12,14 +10,13 @@ function updateProfile(event) {
         url: "/update-profile",
         type: "PUT",
         dataType: "json",
-        data: JSON.stringify({fName, lName, phone, address, profileId})
+        data: JSON.stringify({firstname, lastname, phone, address, profileId})
     })
     .done(data => {
         console.log(data);
     })
 
 }
-
 
 $(document).ready(() => {
 
