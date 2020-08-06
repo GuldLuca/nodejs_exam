@@ -96,7 +96,7 @@ io.on("connection", (socket) => {
 
         //Emit to all clients except sender
         socket.broadcast.emit("user_disconnected", {username: userList[socket.id]});
-        delete userList[socket.id]
+        delete userList[socket.id];
     });
 
     //New message
