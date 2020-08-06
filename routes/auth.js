@@ -92,7 +92,7 @@ router.post("/signup", (req, res) => {
 });
 
 //Signout post request, destroy session
-router.post("/signout", async (req, res) => {
+router.post("/signout", (req, res) => {
     req.session.destroy((error) => {
         console.log(error);
     });

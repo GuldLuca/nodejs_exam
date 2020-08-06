@@ -6,8 +6,9 @@ const path = require("path");
 const session = require("express-session");
 const io = require("socket.io")(http);
 
-const port = process.env.PORT || 4000; //Change to just port?
+const port = 4000;
 
+//Workaround directory comlextion with routes when both hosting and local
 global.appRoot = __dirname;
 
 
@@ -23,14 +24,14 @@ app.use(express.static(path.join(__dirname + "/public/")));
 app.set("views", path.join(__dirname + "views/html"));
 
 
-//Setup session                                                         //DO I NEED THIS?
+//Setup session
 app.use(session({
     secret: "duckduckduck",
     resave: false,
     saveUninitialized: true
 }));
 
-//Session find session user object                                      //WHERE DO I EVEN USE THIS?
+//Session find session user object
 app.use((req, res, next) => {
     if(!req.session.user) {
         return next();
@@ -64,7 +65,7 @@ io.on("connection", (socket) => {
     //User connected
     socket.on("add_user", data => {
 
-        userList[socket.id] = data.username;                            //DO I EVEN USE THIS?
+        userList[socket.id] = data.username;
 
         //Emit to alle clients except sender
         socket.broadcast.emit("user_connected", {

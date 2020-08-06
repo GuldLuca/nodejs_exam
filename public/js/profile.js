@@ -1,11 +1,13 @@
 function updateProfile() {
 
+    //DOM elements
     let firstname = $("#firstname").val();
     let lastname = $("#lastname").val();
     let phone = $("#phone").val();
     let address = $("#address").val();
     let profileId = $("#profileId").val();
 
+    //Update the profile
     $.ajax({
         url: "/update-profile",
         type: "PUT",
@@ -20,9 +22,10 @@ function updateProfile() {
 
 $(document).ready(() => {
 
-
+    //On click show existing profile info from user with username
     $("#show-profile-btn").on("click", () =>{
 
+        //Get username from url param
         const currentUsername = getUsername();
 
         function getUsername() {
@@ -36,8 +39,7 @@ $(document).ready(() => {
                 return "";
             }
         }
-        console.log("line 19 " + currentUsername);
-
+        //get the profile
         $.ajax({
             url: "/api/profile/" + currentUsername,
             type: "GET",
@@ -45,8 +47,8 @@ $(document).ready(() => {
         })
         .done(data => {
 
+            //Manipulate DOM to show profile info
             const profile = data.response;
-            console.log(profile);
                             
             $("#section-profile").append(`
                         <label for="firsname">First name:</label><br>

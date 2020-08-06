@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
     //Get socket instance
-    //const socket = io.connect("http://localhost:4000");
     const socket = io();
 
     //Elements from DOM

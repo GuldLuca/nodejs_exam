@@ -50,7 +50,7 @@ h2{
 
 #section-profile{
     font-family: 'Courier New', Courier, monospace;
-    
+    float: right;
 
 }
 #show-profile-btn{
